@@ -9,7 +9,7 @@ const beanieList = document.getElementById('beanie-list');
 /* State */
 let error = null;
 let count = 0;
-//let astroSigns = [];
+let astroSigns = [];
 //let beanie = [];
 
 /* Events */
@@ -17,6 +17,7 @@ window.addEventListener('load', async () => {
     const response = await getAstroSigns();
     error = response.error;
     astroSigns = response.data;
+    //on load populate dropdown with astrosigns
 });
 
 async function findBeanies(name, astroSign) {
@@ -28,5 +29,8 @@ async function findBeanies(name, astroSign) {
 }
 
 /* Display Functions */
+function displayAstroSigns() {
+    //render each astro sign's dom element
+}
 
 // (don't forget to call any display functions you want to run on page load!)
