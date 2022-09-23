@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Beanie Babies</title>
+        <link rel="icon" type="image/x-icon" href="assets/title.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <header>
+            <img class="logo" src="assets/title.png" alt="logo" />
+            <h1>Web App</h1>
+        </header>
 
-</head>
-
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+            <section class="search">
+                <form id="'search-form">
+                    <input name-="name" placeholder="name" />
+                    <select id="astro-sign-select" name="astroSign">
+                        <option value>All astro signs</option>
+                        <option value="Aquarius">Aquarius</option>
+                        <option value="Aries">Aries</option>
+                        <option value="Cancer">Cancer</option>
+                        \
+                        <option value="Capricorn">Capricorn</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Libra">Libra</option>
+                        <option value="Pisces">Pisces</option>
+                        <option value="Sagitarius">Sagitarius</option>
+                        <option value="Scorpio">Scorpio</option>
+                        <option value="Tarurus">Tarurus</option>
+                        <option value="Virgo">Virgo</option>
+                    </select>
+                    <button>search</button>
+                </form>
+            </section>
+        </main>
+    </body>
 </html>
