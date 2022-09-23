@@ -21,10 +21,11 @@ window.addEventListener('load', async () => {
     astroSigns = response.data;
     //on load populate dropdown with astrosigns
     displayAstroSigns();
+    getBeanies();
 });
 
 // async function findBeanies(name, astroSign) {
-// const response = await getBeanies(name, astroSign);
+//const response = await getBeanies(name, astroSign);
 
 // error = response.error;
 //     count = response.count;
