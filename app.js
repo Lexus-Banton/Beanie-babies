@@ -1,6 +1,6 @@
 /* Imports */
 import { getBeanies, getAstroSigns } from './fetch-utils.js';
-import { renderAstroSigns } from './render-utils.js';
+import { renderAstroSigns, renderBeanie } from './render-utils.js';
 //import { renderAstroSignsOption, renderBeanie } from './render-utils.js';
 
 /* Get DOM Elements */
@@ -12,7 +12,7 @@ const astroSignSelect = document.getElementById('astro-sign-select');
 let error = null;
 let count = 0;
 let astroSigns = [];
-//let beanie = [];
+let beanies = [];
 
 /* Events */
 window.addEventListener('load', async () => {
@@ -21,17 +21,17 @@ window.addEventListener('load', async () => {
     astroSigns = response.data;
     //on load populate dropdown with astrosigns
     displayAstroSigns();
-    getBeanies();
 });
 
-// async function findBeanies(name, astroSign) {
-//const response = await getBeanies(name, astroSign);
+async function findBeanies() {
+    const response = await getBeanies();
 
-// error = response.error;
-//     count = response.count;
-//     beanieList = response.data;
-// }
-
+    error = response.error;
+    count = response.count;
+    beanies = response.data;
+    displayBeanies();
+}
+findBeanies();
 /* Display Functions */
 function displayAstroSigns() {
     for (const astroSign of astroSigns) {
@@ -40,5 +40,10 @@ function displayAstroSigns() {
         astroSignSelect.append(astroEl);
     }
 }
-
+function displayBeanies() {
+    for (const baby of beanies) {
+        const babyEl = renderBeanie(baby);
+        beanieList.append(babyEl);
+    }
+}
 // (don't forget to call any display functions you want to run on page load!)
