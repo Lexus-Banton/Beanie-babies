@@ -7,10 +7,11 @@ import { renderAstroSigns, renderBeanie } from './render-utils.js';
 //const notificationDisplay = document.getElementById('notification-display');
 const beanieList = document.getElementById('beanie-list');
 const astroSignSelect = document.getElementById('astro-sign-select');
+const searchForm = document.getElementById('search-form');
 
 /* State */
 let error = null;
-let count = 0;
+//let count = 0;
 let astroSigns = [];
 let beanies = [];
 
@@ -27,11 +28,19 @@ async function findBeanies(name) {
     const response = await getBeanies(name);
 
     error = response.error;
-    count = response.count;
+    //count = response.count;
     beanies = response.data;
-    displayBeanies();
+    if (!error) {
+        displayBeanies();
+    }
 }
-findBeanies();
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(searchForm);
+    console.log(formData);
+    findBeanies(formData.get('name'));
+});
+
 /* Display Functions */
 function displayAstroSigns() {
     for (const astroSign of astroSigns) {

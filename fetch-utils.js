@@ -10,11 +10,13 @@ export async function getBeanies(name) {
         .select('*', { count: 'exact' })
         .order('releaseYear')
         .limit(100);
+    console.log(name);
     if (name) {
         query = query.ilike('title', `%${name}%`);
     }
     console.log(query);
-    return query;
+    const response = await query;
+    return response;
 }
 
 export async function getAstroSigns() {
