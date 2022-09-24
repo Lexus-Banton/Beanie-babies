@@ -25,3 +25,10 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+## Lex Plan
+
+-   Supabase connection ( list of beanie babies)
+-   display beanie babies
+-   drop down function working( showing filters)
+-   search functions
