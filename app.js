@@ -23,8 +23,8 @@ window.addEventListener('load', async () => {
     displayAstroSigns();
 });
 
-async function findBeanies() {
-    const response = await getBeanies();
+async function findBeanies(name) {
+    const response = await getBeanies(name);
 
     error = response.error;
     count = response.count;

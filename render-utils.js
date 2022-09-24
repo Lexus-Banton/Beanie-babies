@@ -8,10 +8,14 @@ export function renderAstroSigns(astroSign) {
 export function renderBeanie(beanie) {
     const baby = document.createElement('li');
     const title = document.createElement('h2');
+    title.textContent = beanie.title;
     const year = document.createElement('p');
+    year.textContent = beanie.releaseYear;
     const astro = document.createElement('p');
+    astro.textContent = beanie.astroSign;
     const image = document.createElement('img');
     image.src = beanie.image;
+
     baby.append(title, year, astro, image);
     return baby;
 }
